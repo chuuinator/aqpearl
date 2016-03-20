@@ -1,0 +1,29 @@
+.the-link {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #FF6699;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 25px;
+}
+
+a:link {
+	color: #666699;
+}
+.yourdiv {
+	border-width: 5px;
+    border-style: solid;
+    border-color: #1a1aff;
+    padding: 10px;
+}
+
+.link-txt {
+	color: #FF6699;
+}
+
+h2 {
+	color: #FF6699;
+}
+
