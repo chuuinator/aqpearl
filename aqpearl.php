@@ -16,8 +16,9 @@ add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
  */
 function register_plugin_styles() {
 	wp_register_style( 'aqpearl', plugins_url( 'aqpearl/css/aqpearl.css' ) );
-	wp_enqueue_style( 'aqpearl' );
-}
+	wp_enqueue_style( 'aqpearl' );}
+
+<<<<<<< HEAD
 
 <php add_action('wp_footer', 'mp_footer'); 
 
@@ -61,3 +62,20 @@ add_action('admin_menu', 'aqpearl_admin_actions');
 
 
 
+=======
+//register custom post type
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'aqua_product',
+    array(
+      'labels' => array(
+        'name' => __( 'Products' ),
+        'singular_name' => __( 'Product' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
+>>>>>>> origin/master
