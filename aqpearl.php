@@ -16,7 +16,7 @@ add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
  */
 function register_plugin_styles() {
 	wp_register_style( 'aqpearl', plugins_url( 'aqpearl/css/aqpearl.css' ) );
-	
+
 <<<<<<< HEAD
 
 <php add_action('wp_footer', 'mp_footer'); 
