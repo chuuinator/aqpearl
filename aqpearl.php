@@ -34,14 +34,3 @@ function create_post_type() {
     )
   );
 }
-
-// Create the Widget
-
-class CDYearlyArchivesWidget extends WP_Widget {
-	
-	// Initialize the Widget
-	public function __construct() {
-		$widget_ops = array('classname' => 'widget_archive', 'description' => __( 'A yearly archive of your site&#8217;s Posts.') );
-		// Adds a class to the widget and provides a description on the Widget page to describe what the widget does.
-		parent::__construct('yearly_archives', __('Yearly Archives', 'codediva'), $widget_ops);
-	}
