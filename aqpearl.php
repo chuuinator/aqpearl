@@ -16,8 +16,7 @@ add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
  */
 function register_plugin_styles() {
 	wp_register_style( 'aqpearl', plugins_url( 'aqpearl/css/aqpearl.css' ) );
-	wp_enqueue_style( 'aqpearl' );}
-
+	
 <<<<<<< HEAD
 
 <php add_action('wp_footer', 'mp_footer'); 
@@ -78,4 +77,18 @@ function create_post_type() {
     )
   );
 }
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+
+// Create the Widget
+
+class ProductPostWidget extends WP_Widget {
+	
+	// Initialize the Widget
+	public function __construct() {
+		$widget_ops = array('classname' => 'widget_products', 'description' => __( 'A Display of your site&#8217;s Product Posts.') );
+		// Adds a class to the widget and provides a description on the Widget page to describe what the widget does.
+		parent::__construct('product_posts', __('Product Posts', 'tmj'), $widget_ops);
+	}
 >>>>>>> origin/master
