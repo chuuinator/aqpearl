@@ -18,3 +18,19 @@ function register_plugin_styles() {
 	wp_register_style( 'aqpearl', plugins_url( 'aqpearl/css/aqpearl.css' ) );
 	wp_enqueue_style( 'aqpearl' );
 }
+
+//register custom post type
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'aqua_product',
+    array(
+      'labels' => array(
+        'name' => __( 'Products' ),
+        'singular_name' => __( 'Product' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
