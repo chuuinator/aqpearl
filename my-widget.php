@@ -14,9 +14,9 @@ class CDYearlyArchivesWidget extends WP_Widget {
 	
 	// Initialize the Widget
 	public function __construct() {
-		$widget_ops = array('classname' => 'widget_archive', 'description' => __( 'A yearly archive of your site&#8217;s Posts.') );
+		$widget_ops = array('classname' => 'widget_archive', 'description' => __( 'Recent Posts') );
 		// Adds a class to the widget and provides a description on the Widget page to describe what the widget does.
-		parent::__construct('yearly_archives', __('Yearly Archives', 'codediva'), $widget_ops);
+		parent::__construct('recent_posts', __('Recent Posts', 'Tetyana'), $widget_ops);
 	}
 	
 	// Determines what will appear on the site
@@ -25,7 +25,7 @@ class CDYearlyArchivesWidget extends WP_Widget {
 		//sets a variable for whether or not the 'Count' option is checked
 		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
 		// sets a variable for whether or not the 'Dropdown' option is checked
-		$title = apply_filters('widget_title', empty($instance['title']) ? __('Yearly Archives', 'codediva') : $instance['title'], $instance, $this->id_base); 
+		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'Tetyana') : $instance['title'], $instance, $this->id_base); 
 		// Determines if there's a user-provided title and if not, displays a default title.
 		
 		echo $args['before_widget']; // what's set up when you registered the sidebar
@@ -47,7 +47,7 @@ class CDYearlyArchivesWidget extends WP_Widget {
 				'show_post_count' => $c // If post count checked, show the post count
 			) );
 		?>	
-			<option value="<?php echo __( 'Select Year', 'codediva' ); ?>"><?php echo __( 'Select Year', 'codediva' ); ?></option>
+			<option value="<?php echo __( 'Select Product', 'Tetyana' ); ?>"><?php echo __( 'Select Product', 'Tetyana' ); ?></option>
 			<?php wp_get_archives( $dropdown_args ); ?>
 		</select>
 <?php
@@ -81,7 +81,7 @@ class CDYearlyArchivesWidget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 		<p>
-			<input class="checkbox" type="checkbox" <?php echo $dropdown; ?> id="<?php echo $this->get_field_id('dropdown'); ?>" name="<?php echo $this->get_field_name('dropdown'); ?>" /> <label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e('Display as dropdown'); ?></label>
+			<input class="checkbox" type="checkbox" <?php echo $dropdown; ?> id="<?php echo $this->get_field_id('dropdown'); ?>" name="<?php echo $this->get_field_name('dropdown'); ?>" /> <label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e('Show dropdown'); ?></label>
 			<br/>
 			<input class="checkbox" type="checkbox" <?php echo $count; ?> id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" /> <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Show post counts'); ?></label>
 		</p>
