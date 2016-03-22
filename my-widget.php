@@ -8,27 +8,27 @@
 * Version: 1.0 
 */
 
-// Create the Widget
+// Widget
 
 class CDYearlyArchivesWidget extends WP_Widget {
 	
-	// Initialize the Widget
+	// This is initializing the Widget
 	public function __construct() {
 		$widget_ops = array('classname' => 'widget_archive', 'description' => __( 'Recent Posts') );
 		// Adds a class to the widget and provides a description on the Widget page to describe what the widget does.
 		parent::__construct('recent_posts', __('Recent Posts', 'Tetyana'), $widget_ops);
 	}
 	
-	// Determines what will appear on the site
+	// This is determining what will appear on the site
 	public function widget( $args, $instance ) {
 		$c = ! empty( $instance['count'] ) ? '1' : '0'; 
-		//sets a variable for whether or not the 'Count' option is checked
+		// This sets a variable for whether or not the 'Count' option is checked
 		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
-		// sets a variable for whether or not the 'Dropdown' option is checked
+		// This sets a variable for whether or not the 'Dropdown' option is checked
 		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'Tetyana') : $instance['title'], $instance, $this->id_base); 
-		// Determines if there's a user-provided title and if not, displays a default title.
+		// This Determines if there's a user-provided title and if not, displays a default title.
 		
-		echo $args['before_widget']; // what's set up when you registered the sidebar
+		echo $args['before_widget']; // This shows what is set up when you registered the sidebar
 		
 		if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
@@ -60,14 +60,13 @@ class CDYearlyArchivesWidget extends WP_Widget {
 			'type'            => 'yearly',
 			'show_post_count' => $c
 		) ) ); 
-			// gets a list of the archives and displays them by year. If the Count option is checked, this gets shown.
 		?>
 		</ul>
 
 <?php
 		}
 		
-		echo $args['after_widget']; // what's set up when you registered the sidebar
+		echo $args['after_widget']; // This is what is set up when the sidebar is registered
 	}
 	
 	// Sets up the form for users to set their options/add content in the widget admin page
@@ -98,7 +97,7 @@ class CDYearlyArchivesWidget extends WP_Widget {
 
 		return $instance;
 	}
-} // Closes the function we opened in step 1
+} // Closes the function that was opened in step one
 
 // Tells WordPress that this widget has been created and that it should display in the list of available widgets.
 
