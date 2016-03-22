@@ -101,3 +101,46 @@ class ProductPostWidget extends WP_Widget {
 	}
 >>>>>>> origin/master
 >>>>>>> origin/master
+
+//Loop posts with featured image
+<div id="gridcontainer">
+				<?php 
+					$counter = 1; //start counter
+					$grids = 2; //Grids per row
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					$args = array('posts_per_page' => 4, 'paged' => $paged, 'cat' => 2);
+					query_posts($args); 
+					if(have_posts()) :  while(have_posts()) :  the_post();
+				?>
+				<?php
+				//Show the left hand side column
+					if($counter == 1) :
+				?>
+					<div class="gridleft">
+					<div class="imagepost">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('category-thumbnail'); ?></a>
+					</div>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+					</div>
+				<?php
+				//Show the right hand side column
+				elseif($counter == $grids) :
+				?>
+					<div class="gridright">
+					<div class="imagepost">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('category-thumbnail'); ?></a>
+					</div>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+					</div>
+				<div class="clear"></div>
+					<?php
+						$counter = 0;
+						endif;
+					?>
+					<?php
+						$counter++;
+						endwhile; ?>
+						<?php the_posts_pagination( $args ); ?> 
+					<?php endif;
+					?>
+			</div>
