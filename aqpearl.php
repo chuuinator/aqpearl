@@ -62,6 +62,7 @@ add_action('admin_menu', 'aqpearl_admin_actions');
 
 
 =======
+<?php
 //register custom post type
 
 add_action( 'init', 'create_post_type' );
