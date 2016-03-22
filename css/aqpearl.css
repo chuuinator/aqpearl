@@ -27,3 +27,49 @@ h2 {
 	color: #FF6699;
 }
 
+
+/* Post Type Styling*/
+.product_box{
+    border: double;
+	padding: 10px;
+	margin: auto;
+	border-color: #b2476b;
+}
+
+.product_desc{
+   color: #505050;
+    font-family: sans-serif;
+    font: 15px century gothic, sans-serif;
+}
+
+
+
+/* Button Styling */
+.button-link{
+	border: double;
+	padding: 10px;
+	margin: auto;
+	border-color: #b2476b;
+	top: -18px;
+	left: 230px;
+	background: linear-gradient(0deg, #CC6699, #F8F8F8 );
+	border-radius: 20px;
+	box-shadow: 3px 3px #c0c0c0;
+	text-decoration: none;
+
+	
+}
+
+/* Button Hover Style */
+.button-link:hover{
+	border: double;
+	border-color: #b2476b;
+	text-transform: uppercase;
+	color: #660066;
+	background: linear-gradient(0deg, #CC6699, #F8F8F8  );
+	text-decoration: underline;
+	}
+
+
+	
+}
